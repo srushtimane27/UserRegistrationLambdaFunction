@@ -9,23 +9,18 @@ public class UserValidatorTest {
 
     //Test Cases For First Name
     @Test
-    public void givenFirstName_WhenProper_ShouldReturnTrue(){
+    public void givenFirstName_WhenStartsWithCaps_ShouldReturnTrue(){
         UserValidator validator = new UserValidator();
         boolean result = validator.validateFirstName("Srushti");
         Assertions.assertTrue(result);
     }
     @Test
-    public void givenFirstName_WhenShort_ShouldReturnFalse(){
+    public void givenFirstName_HasMinThreeLetters_ShouldReturnTrue(){
         UserValidator validator = new UserValidator();
-        boolean result = validator.validateFirstName("Sr");
+        boolean result = validator.validateFirstName("Srus");
         Assertions.assertTrue(result);
     }
-    @Test
-    public void givenFirstName_WhenFirstLetterCapital_ShouldReturnTrue(){
-        UserValidator validator = new UserValidator();
-        boolean result = validator.validateFirstName("Kavya");
-        Assertions.assertTrue(result);
-    }
+
     //Test Cases For Last Name
     @Test
     public void givenLastName_WhenLastLetterCapital_ShouldReturnTrue(){
