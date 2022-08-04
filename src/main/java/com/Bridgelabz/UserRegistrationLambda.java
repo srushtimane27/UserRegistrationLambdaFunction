@@ -18,6 +18,18 @@ public class UserRegistrationLambda {
 
         //printing result
         fname_result.forEach(System.out::println);
+        
+        
+        //last name validation
+        List<String> lname = Arrays.asList("Pawar", "Ghadi","pa1il","g0re");
+        final Pattern pattern2 = Pattern.compile("^[A-Z][a-z]{3,15}$");
+
+        // Using regex with lambda expression
+        List<String> lname_result = lname.stream().filter(p -> pattern2.matcher(p).find()).collect(Collectors.<String>toList());
+
+        //printing result
+        lname_result.forEach(System.out::println);
+
 
     }
 }
